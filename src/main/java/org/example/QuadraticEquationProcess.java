@@ -5,14 +5,14 @@ import java.util.List;
 public class QuadraticEquationProcess {
     private QuadraticEquation polinom;
 
-    public void QuadraticEquation(QuadraticEquation polinom) {
+    public QuadraticEquationProcess(QuadraticEquation polinom) {
         this.polinom = polinom;
     }
 
     public double getMaxRoot() {
         List<Double> root = polinom.solveEquation();
         if (root == null) {
-            throw new IllegalArgumentException("Нет корней");
+            throw new IndexOutOfBoundsException("Нет корней");
         }
         double maxRoot = root.get(0);
         for (int i = 1; i < root.size(); i++) {
